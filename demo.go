@@ -26,7 +26,7 @@ func main() {
 		for i := 0; i < len(stored_urls); i++ {
 			check := urlbase.Store(i, stored_urls[i])
 			if !check {
-				fmt.Printf("Failed to store ", stored_urls[i])				
+				fmt.Println("Failed to store", stored_urls[i])				
 			}
 			fmt.Println("Stored", stored_urls[i])
 		}
@@ -40,7 +40,7 @@ func main() {
 			if !err {				
 				retrieved_urls[i] = value
 				fmt.Println("Retrieved", retrieved_urls[i],
-					"Matched", retrieved_urls[i] == stored_urls[i])
+					"Matched", (retrieved_urls[i] == stored_urls[i]))
 			}
 		}
 		fmt.Println("Retrieved",len(retrieved_urls),"URLs!")
